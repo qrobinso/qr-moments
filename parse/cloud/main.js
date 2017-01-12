@@ -1,16 +1,9 @@
-var twilioAccountSid = 'ACd31e27297ea5ceb19cee5eb70d17ae15';
-var twilioAuthToken = '091db0e2f9df2fb1696caf3caee8368a';
 var twilioPhoneNumber = '2675260237';
 var secretPasswordToken = 'morning';
 var language = "en";
 var languages = ["en", "ja"];
-//var twilio = require('twilio')(twilioAccountSid, twilioAuthToken);
-var twilioAccountSid = 'ACd31e27297ea5ceb19cee5eb70d17ae15';
-var twilioAuthToken = '091db0e2f9df2fb1696caf3caee8368a';
-var twilioPhoneNumber = '2675260237';
-var secretPasswordToken = 'morning';
-var language = "en";
-var languages = ["en", "ja"];
+var twilio = require('twilio')('ACd31e27297ea5ceb19cee5eb70d17ae15', '091db0e2f9df2fb1696caf3caee8368a');
+
 
 Parse.Cloud.define('hello', function(req, res) {
   res.success('Hi');
@@ -32,7 +25,7 @@ Parse.Cloud.define("sendSMSCode", function(request, response) {
     updateUser.set("phoneNumber", phoneNumber);
 	updateUser.save();
     
-	twilio.sendSms({
+	twilio.sendMessage({
 		to: prefix + phoneNumber.replace(/\D/g, ''),
 		from: twilioPhoneNumber.replace(/\D/g, ''),
 		body: 'Your login code for Morning Moment is ' + code
