@@ -3,7 +3,7 @@ var secretPasswordToken = 'morning';
 var language = "en";
 var languages = ["en", "ja"];
 var twilio = require('twilio')('ACd31e27297ea5ceb19cee5eb70d17ae15', '091db0e2f9df2fb1696caf3caee8368a');
-//input
+//input2
 
 Parse.Cloud.define('hello', function(req, res) {
   res.success('Hi');
