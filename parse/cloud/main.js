@@ -4,8 +4,14 @@ var twilioPhoneNumber = '2675260237';
 var secretPasswordToken = 'morning';
 var language = "en";
 var languages = ["en", "ja"];
-//var twilio = require('twilio')(twilioAccountSid, twilioAuthToken);
-
+var twilio = require('twilio')(twilioAccountSid, twilioAuthToken);
+var twilioAccountSid = 'ACd31e27297ea5ceb19cee5eb70d17ae15';
+var twilioAuthToken = '091db0e2f9df2fb1696caf3caee8368a';
+var twilioPhoneNumber = '2675260237';
+var secretPasswordToken = 'morning';
+var language = "en";
+var languages = ["en", "ja"];
+var twilio = require('twilio')(twilioAccountSid, twilioAuthToken);
 
 Parse.Cloud.define('hello', function(req, res) {
   res.success('Hi');
